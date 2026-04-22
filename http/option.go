@@ -3,8 +3,7 @@ package http
 import (
 	"time"
 
-	"github.com/DaiYuANg/arcgo/clientx"
-	"resty.dev/v3"
+	"github.com/arcgolabs/clientx"
 )
 
 // Option configures a DefaultClient.

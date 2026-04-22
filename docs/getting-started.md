@@ -14,8 +14,8 @@ This page uses **`clientx/http`** only: construct a client from `Config`, run on
 ## 1) Install
 
 ```bash
-go get github.com/DaiYuANg/arcgo/clientx@latest
-go get github.com/DaiYuANg/arcgo/clientx/http@latest
+go get github.com/arcgolabs/clientx@latest
+go get github.com/arcgolabs/clientx/http@latest
 ```
 
 ## 2) Create `main.go`
@@ -32,8 +32,8 @@ import (
 	"net/http"
 	"time"
 
-	"github.com/DaiYuANg/arcgo/clientx"
-	clienthttp "github.com/DaiYuANg/arcgo/clientx/http"
+	"github.com/arcgolabs/clientx"
+	clienthttp "github.com/arcgolabs/clientx/http"
 )
 
 func main() {
@@ -69,8 +69,8 @@ func main() {
 
 ```bash
 go mod init example.com/clientx-http
-go get github.com/DaiYuANg/arcgo/clientx@latest
-go get github.com/DaiYuANg/arcgo/clientx/http@latest
+go get github.com/arcgolabs/clientx@latest
+go get github.com/arcgolabs/clientx/http@latest
 go run .
 ```
 

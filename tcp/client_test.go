@@ -8,9 +8,9 @@ import (
 	"testing"
 	"time"
 
-	"github.com/DaiYuANg/arcgo/clientx"
-	clientcodec "github.com/DaiYuANg/arcgo/clientx/codec"
-	clienttcp "github.com/DaiYuANg/arcgo/clientx/tcp"
+	"github.com/arcgolabs/clientx"
+	clientcodec "github.com/arcgolabs/clientx/codec"
+	clienttcp "github.com/arcgolabs/clientx/tcp"
 	"github.com/samber/lo"
 )
 

@@ -3,8 +3,8 @@ package tcp
 import (
 	"context"
 
-	"github.com/DaiYuANg/arcgo/clientx"
-	clientcodec "github.com/DaiYuANg/arcgo/clientx/codec"
+	"github.com/arcgolabs/clientx"
+	clientcodec "github.com/arcgolabs/clientx/codec"
 )
 
 // Client is the TCP client abstraction exposed by this package.

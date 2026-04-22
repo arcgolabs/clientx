@@ -14,9 +14,9 @@ These samples dial **local addresses** — start a matching listener first, or e
 ## 1) Install
 
 ```bash
-go get github.com/DaiYuANg/arcgo/clientx@latest
-go get github.com/DaiYuANg/arcgo/clientx/tcp@latest
-go get github.com/DaiYuANg/arcgo/clientx/udp@latest
+go get github.com/arcgolabs/clientx@latest
+go get github.com/arcgolabs/clientx/tcp@latest
+go get github.com/arcgolabs/clientx/udp@latest
 ```
 
 ## 2) TCP client
@@ -30,8 +30,8 @@ import (
 	"log"
 	"time"
 
-	"github.com/DaiYuANg/arcgo/clientx"
-	"github.com/DaiYuANg/arcgo/clientx/tcp"
+	"github.com/arcgolabs/clientx"
+	"github.com/arcgolabs/clientx/tcp"
 )
 
 func main() {
@@ -70,8 +70,8 @@ import (
 	"log"
 	"time"
 
-	"github.com/DaiYuANg/arcgo/clientx"
-	"github.com/DaiYuANg/arcgo/clientx/udp"
+	"github.com/arcgolabs/clientx"
+	"github.com/arcgolabs/clientx/udp"
 )
 
 func main() {

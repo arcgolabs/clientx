@@ -15,11 +15,11 @@
 
 ## Package layout
 
-- Shared errors, hooks, policies: `github.com/DaiYuANg/arcgo/clientx`
-- HTTP client: `github.com/DaiYuANg/arcgo/clientx/http`
-- TCP client: `github.com/DaiYuANg/arcgo/clientx/tcp`
-- UDP client: `github.com/DaiYuANg/arcgo/clientx/udp`
-- Codecs and framers: `github.com/DaiYuANg/arcgo/clientx/codec`
+- Shared errors, hooks, policies: `github.com/arcgolabs/clientx`
+- HTTP client: `github.com/arcgolabs/clientx/http`
+- TCP client: `github.com/arcgolabs/clientx/tcp`
+- UDP client: `github.com/arcgolabs/clientx/udp`
+- Codecs and framers: `github.com/arcgolabs/clientx/codec`
 
 ## Documentation map
 
@@ -31,10 +31,10 @@
 ## Install / Import
 
 ```bash
-go get github.com/DaiYuANg/arcgo/clientx@latest
-go get github.com/DaiYuANg/arcgo/clientx/http@latest
-go get github.com/DaiYuANg/arcgo/clientx/tcp@latest
-go get github.com/DaiYuANg/arcgo/clientx/udp@latest
+go get github.com/arcgolabs/clientx@latest
+go get github.com/arcgolabs/clientx/http@latest
+go get github.com/arcgolabs/clientx/tcp@latest
+go get github.com/arcgolabs/clientx/udp@latest
 ```
 
 ## Error model

@@ -7,9 +7,8 @@ import (
 	"strings"
 	"time"
 
-	"github.com/DaiYuANg/arcgo/clientx"
+	"github.com/arcgolabs/clientx"
 	"github.com/samber/oops"
-	"resty.dev/v3"
 )
 
 // DefaultClient is the default HTTP client implementation.

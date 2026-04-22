@@ -3,8 +3,7 @@ package http
 import (
 	"context"
 
-	"github.com/DaiYuANg/arcgo/clientx"
-	"resty.dev/v3"
+	"github.com/arcgolabs/clientx"
 )
 
 // Client is the HTTP client abstraction exposed by this package.

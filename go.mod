@@ -1,4 +1,4 @@
-module github.com/DaiYuANg/arcgo/clientx
+module github.com/arcgolabs/clientx
 
 go 1.26.2
 

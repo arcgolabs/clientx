@@ -5,7 +5,7 @@ import (
 	"log/slog"
 	"testing"
 
-	"github.com/DaiYuANg/arcgo/clientx"
+	"github.com/arcgolabs/clientx"
 )
 
 func TestHookFuncsDispatch(t *testing.T) {

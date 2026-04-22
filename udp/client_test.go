@@ -7,9 +7,9 @@ import (
 	"testing"
 	"time"
 
-	"github.com/DaiYuANg/arcgo/clientx"
-	clientcodec "github.com/DaiYuANg/arcgo/clientx/codec"
-	clientudp "github.com/DaiYuANg/arcgo/clientx/udp"
+	"github.com/arcgolabs/clientx"
+	clientcodec "github.com/arcgolabs/clientx/codec"
+	clientudp "github.com/arcgolabs/clientx/udp"
 )
 
 func TestDialRoundTrip(t *testing.T) {

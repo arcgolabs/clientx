@@ -9,8 +9,8 @@ import (
 	"strings"
 	"time"
 
-	"github.com/DaiYuANg/arcgo/clientx/preset"
-	clientudp "github.com/DaiYuANg/arcgo/clientx/udp"
+	"github.com/arcgolabs/clientx/preset"
+	clientudp "github.com/arcgolabs/clientx/udp"
 )
 
 type udpDialCloser interface {

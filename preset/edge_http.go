@@ -4,9 +4,9 @@ import (
 	"strings"
 	"time"
 
-	"github.com/DaiYuANg/arcgo/clientx"
-	clienthttp "github.com/DaiYuANg/arcgo/clientx/http"
 	"github.com/DaiYuANg/arcgo/collectionx"
+	"github.com/arcgolabs/clientx"
+	clienthttp "github.com/arcgolabs/clientx/http"
 	"github.com/samber/oops"
 )
 

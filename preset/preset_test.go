@@ -10,12 +10,11 @@ import (
 	"testing"
 	"time"
 
-	"github.com/DaiYuANg/arcgo/clientx"
-	clienthttp "github.com/DaiYuANg/arcgo/clientx/http"
-	"github.com/DaiYuANg/arcgo/clientx/preset"
-	clienttcp "github.com/DaiYuANg/arcgo/clientx/tcp"
-	clientudp "github.com/DaiYuANg/arcgo/clientx/udp"
-	"resty.dev/v3"
+	"github.com/arcgolabs/clientx"
+	clienthttp "github.com/arcgolabs/clientx/http"
+	"github.com/arcgolabs/clientx/preset"
+	clienttcp "github.com/arcgolabs/clientx/tcp"
+	clientudp "github.com/arcgolabs/clientx/udp"
 )
 
 func TestNewEdgeHTTPRetryPreset(t *testing.T) {

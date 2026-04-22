@@ -5,7 +5,7 @@ import (
 	"errors"
 	"testing"
 
-	"github.com/DaiYuANg/arcgo/clientx/codec"
+	"github.com/arcgolabs/clientx/codec"
 )
 
 type sample struct {

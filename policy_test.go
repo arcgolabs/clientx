@@ -7,7 +7,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/DaiYuANg/arcgo/clientx"
+	"github.com/arcgolabs/clientx"
 )
 
 // testCtxKey is a private type for context keys in tests,

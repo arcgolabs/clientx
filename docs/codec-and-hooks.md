@@ -15,11 +15,11 @@ For wiring **`observabilityx`** into hooks, see the tests in [`clientx/hook_obse
 ## 1) Install
 
 ```bash
-go get github.com/DaiYuANg/arcgo/clientx@latest
-go get github.com/DaiYuANg/arcgo/clientx/tcp@latest
-go get github.com/DaiYuANg/arcgo/clientx/udp@latest
-go get github.com/DaiYuANg/arcgo/clientx/codec@latest
-go get github.com/DaiYuANg/arcgo/clientx/http@latest
+go get github.com/arcgolabs/clientx@latest
+go get github.com/arcgolabs/clientx/tcp@latest
+go get github.com/arcgolabs/clientx/udp@latest
+go get github.com/arcgolabs/clientx/codec@latest
+go get github.com/arcgolabs/clientx/http@latest
 ```
 
 ## 2) Register a custom codec
@@ -33,7 +33,7 @@ import (
 	"fmt"
 	"log"
 
-	"github.com/DaiYuANg/arcgo/clientx/codec"
+	"github.com/arcgolabs/clientx/codec"
 )
 
 type reverseCodec struct{}
@@ -94,8 +94,8 @@ import (
 	"log"
 	"time"
 
-	"github.com/DaiYuANg/arcgo/clientx/codec"
-	"github.com/DaiYuANg/arcgo/clientx/tcp"
+	"github.com/arcgolabs/clientx/codec"
+	"github.com/arcgolabs/clientx/tcp"
 )
 
 func main() {
@@ -131,8 +131,8 @@ import (
 	"context"
 	"log"
 
-	"github.com/DaiYuANg/arcgo/clientx/codec"
-	"github.com/DaiYuANg/arcgo/clientx/udp"
+	"github.com/arcgolabs/clientx/codec"
+	"github.com/arcgolabs/clientx/udp"
 )
 
 func main() {
@@ -165,10 +165,10 @@ import (
 	"log"
 	"time"
 
-	"github.com/DaiYuANg/arcgo/clientx"
-	clienthttp "github.com/DaiYuANg/arcgo/clientx/http"
-	"github.com/DaiYuANg/arcgo/clientx/tcp"
-	"github.com/DaiYuANg/arcgo/clientx/udp"
+	"github.com/arcgolabs/clientx"
+	clienthttp "github.com/arcgolabs/clientx/http"
+	"github.com/arcgolabs/clientx/tcp"
+	"github.com/arcgolabs/clientx/udp"
 )
 
 func main() {

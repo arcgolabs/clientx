@@ -8,7 +8,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/DaiYuANg/arcgo/clientx"
+	"github.com/arcgolabs/clientx"
 )
 
 func TestConcurrencyLimitPolicySerialize(t *testing.T) {

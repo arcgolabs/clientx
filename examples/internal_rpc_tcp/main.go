@@ -10,8 +10,8 @@ import (
 	"strings"
 	"time"
 
-	"github.com/DaiYuANg/arcgo/clientx/preset"
-	clienttcp "github.com/DaiYuANg/arcgo/clientx/tcp"
+	"github.com/arcgolabs/clientx/preset"
+	clienttcp "github.com/arcgolabs/clientx/tcp"
 )
 
 type tcpDialCloser interface {

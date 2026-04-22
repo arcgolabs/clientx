@@ -7,8 +7,8 @@ import (
 	"net"
 	"time"
 
-	"github.com/DaiYuANg/arcgo/clientx"
-	clientcodec "github.com/DaiYuANg/arcgo/clientx/codec"
+	"github.com/arcgolabs/clientx"
+	clientcodec "github.com/arcgolabs/clientx/codec"
 	"github.com/samber/oops"
 )
 

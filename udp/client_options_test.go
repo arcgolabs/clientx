@@ -8,8 +8,8 @@ import (
 	"testing"
 	"time"
 
-	"github.com/DaiYuANg/arcgo/clientx"
-	clientudp "github.com/DaiYuANg/arcgo/clientx/udp"
+	"github.com/arcgolabs/clientx"
+	clientudp "github.com/arcgolabs/clientx/udp"
 )
 
 func TestNewWithInvalidConfig(t *testing.T) {

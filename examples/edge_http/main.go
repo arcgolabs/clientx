@@ -10,8 +10,8 @@ import (
 	"net/http/httptest"
 	"time"
 
-	clienthttp "github.com/DaiYuANg/arcgo/clientx/http"
-	"github.com/DaiYuANg/arcgo/clientx/preset"
+	clienthttp "github.com/arcgolabs/clientx/http"
+	"github.com/arcgolabs/clientx/preset"
 )
 
 func main() {

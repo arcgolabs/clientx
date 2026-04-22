@@ -8,7 +8,7 @@ import (
 	"syscall"
 	"testing"
 
-	"github.com/DaiYuANg/arcgo/clientx"
+	"github.com/arcgolabs/clientx"
 )
 
 type netErrMock struct {

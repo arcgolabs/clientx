@@ -1,6 +1,6 @@
 package preset
 
-import "github.com/DaiYuANg/arcgo/clientx"
+import "github.com/arcgolabs/clientx"
 
 func isZeroRetryConfig(cfg clientx.RetryConfig) bool {
 	return !cfg.Enabled && cfg.MaxRetries == 0 && cfg.WaitMin == 0 && cfg.WaitMax == 0

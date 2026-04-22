@@ -4,7 +4,7 @@ import (
 	"net"
 	"time"
 
-	"github.com/DaiYuANg/arcgo/clientx"
+	"github.com/arcgolabs/clientx"
 	"github.com/samber/oops"
 )
 

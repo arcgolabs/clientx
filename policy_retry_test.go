@@ -6,7 +6,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/DaiYuANg/arcgo/clientx"
+	"github.com/arcgolabs/clientx"
 )
 
 func TestRetryPolicyRetriesUntilSuccess(t *testing.T) {

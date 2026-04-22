@@ -8,8 +8,8 @@ import (
 	"testing"
 	"time"
 
-	"github.com/DaiYuANg/arcgo/clientx"
-	clienttcp "github.com/DaiYuANg/arcgo/clientx/tcp"
+	"github.com/arcgolabs/clientx"
+	clienttcp "github.com/arcgolabs/clientx/tcp"
 )
 
 func TestDialWithConcurrencyLimitOption(t *testing.T) {

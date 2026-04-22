@@ -3,7 +3,7 @@ package udp
 import (
 	"time"
 
-	"github.com/DaiYuANg/arcgo/clientx"
+	"github.com/arcgolabs/clientx"
 )
 
 // Option configures a DefaultClient.
