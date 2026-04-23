@@ -10,7 +10,7 @@ weight: 4
 - **HTTP** follows normal request/response semantics; TCP/UDP can stack **`clientx/codec`** with an optional **framer** (length-prefixed frames on TCP).
 - **Hooks** (`clientx.Hook`, `clientx.HookFuncs`) are shared across `clientx/http`, `clientx/tcp`, and `clientx/udp`.
 
-For wiring **`observabilityx`** into hooks, see the tests in [`clientx/hook_observability_test.go`](https://github.com/DaiYuANg/arcgo/blob/main/clientx/hook_observability_test.go).
+For wiring **`observabilityx`** into hooks, see the tests in [`hook_observability_test.go`](https://github.com/arcgolabs/clientx/blob/main/hook_observability_test.go).
 
 ## 1) Install
 

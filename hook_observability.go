@@ -4,8 +4,8 @@ import (
 	"context"
 	"strings"
 
-	"github.com/DaiYuANg/arcgo/collectionx"
-	"github.com/DaiYuANg/arcgo/observabilityx"
+	"github.com/arcgolabs/collectionx"
+	"github.com/arcgolabs/observabilityx"
 	"github.com/samber/lo"
 )
 

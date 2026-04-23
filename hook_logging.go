@@ -3,7 +3,7 @@ package clientx
 import (
 	"log/slog"
 
-	"github.com/DaiYuANg/arcgo/collectionx"
+	"github.com/arcgolabs/collectionx"
 )
 
 // LoggingHookOption configures NewLoggingHook behavior.

@@ -15,6 +15,7 @@ import (
 	"github.com/arcgolabs/clientx/preset"
 	clienttcp "github.com/arcgolabs/clientx/tcp"
 	clientudp "github.com/arcgolabs/clientx/udp"
+	"resty.dev/v3"
 )
 
 func TestNewEdgeHTTPRetryPreset(t *testing.T) {

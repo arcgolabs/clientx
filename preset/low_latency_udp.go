@@ -3,9 +3,9 @@ package preset
 import (
 	"time"
 
-	"github.com/DaiYuANg/arcgo/collectionx"
 	"github.com/arcgolabs/clientx"
 	clientudp "github.com/arcgolabs/clientx/udp"
+	"github.com/arcgolabs/collectionx"
 	"github.com/samber/oops"
 )
 

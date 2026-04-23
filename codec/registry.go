@@ -4,8 +4,8 @@ import (
 	"errors"
 	"strings"
 
-	"github.com/DaiYuANg/arcgo/collectionx"
-	"github.com/DaiYuANg/arcgo/collectionx/mapping"
+	"github.com/arcgolabs/collectionx"
+	"github.com/arcgolabs/collectionx/mapping"
 	"github.com/samber/lo"
 	"github.com/samber/mo"
 	"github.com/samber/oops"

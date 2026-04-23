@@ -7,8 +7,8 @@ import (
 	"testing"
 	"time"
 
-	"github.com/DaiYuANg/arcgo/observabilityx"
 	"github.com/arcgolabs/clientx"
+	"github.com/arcgolabs/observabilityx"
 	"github.com/samber/lo"
 )
 

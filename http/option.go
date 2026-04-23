@@ -4,6 +4,7 @@ import (
 	"time"
 
 	"github.com/arcgolabs/clientx"
+	"resty.dev/v3"
 )
 
 // Option configures a DefaultClient.

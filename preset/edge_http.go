@@ -4,9 +4,9 @@ import (
 	"strings"
 	"time"
 
-	"github.com/DaiYuANg/arcgo/collectionx"
 	"github.com/arcgolabs/clientx"
 	clienthttp "github.com/arcgolabs/clientx/http"
+	"github.com/arcgolabs/collectionx"
 	"github.com/samber/oops"
 )
 
@@ -107,7 +107,7 @@ func defaultEdgeHTTPPreset() edgeHTTPPreset {
 			WaitMin:    50 * time.Millisecond,
 			WaitMax:    250 * time.Millisecond,
 		},
-		userAgent: "arcgo-clientx/edge-http",
+		userAgent: "arcgolabs-clientx/edge-http",
 	}
 }
 

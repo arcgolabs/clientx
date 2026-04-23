@@ -1,6 +1,10 @@
-go 1.26
+go 1.26.2
 
 use (
 	.
 	examples
+	../collectionx
+	../collectionx/mapping
+	../observabilityx
+	../pkg/option
 )

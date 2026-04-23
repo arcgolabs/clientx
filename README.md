@@ -23,10 +23,9 @@
 
 ## Documentation map
 
-- Release notes: [clientx v0.3.0](./release-v0.3.0)
-- HTTP-only quick path: [Getting Started](./getting-started)
-- TCP and UDP dial: [TCP and UDP](./tcp-and-udp)
-- Codecs (TCP/UDP) and hooks: [Codec and hooks](./codec-and-hooks)
+- HTTP-only quick path: [Getting Started](./docs/getting-started.md)
+- TCP and UDP dial: [TCP and UDP](./docs/tcp-and-udp.md)
+- Codecs (TCP/UDP) and hooks: [Codec and hooks](./docs/codec-and-hooks.md)
 
 ## Install / Import
 
@@ -53,14 +52,14 @@ go get github.com/arcgolabs/clientx/udp@latest
 
 ## Runnable examples (repository)
 
-- [examples/clientx/edge_http](https://github.com/DaiYuANg/arcgo/tree/main/examples/clientx/edge_http)
-- [examples/clientx/internal_rpc_tcp](https://github.com/DaiYuANg/arcgo/tree/main/examples/clientx/internal_rpc_tcp)
-- [examples/clientx/low_latency_udp](https://github.com/DaiYuANg/arcgo/tree/main/examples/clientx/low_latency_udp)
+- [examples/edge_http](https://github.com/arcgolabs/clientx/tree/main/examples/edge_http)
+- [examples/internal_rpc_tcp](https://github.com/arcgolabs/clientx/tree/main/examples/internal_rpc_tcp)
+- [examples/low_latency_udp](https://github.com/arcgolabs/clientx/tree/main/examples/low_latency_udp)
 
 ```bash
-go run ./examples/clientx/edge_http
-go run ./examples/clientx/internal_rpc_tcp
-go run ./examples/clientx/low_latency_udp
+go run ./examples/edge_http
+go run ./examples/internal_rpc_tcp
+go run ./examples/low_latency_udp
 ```
 
 ## Testing and production notes

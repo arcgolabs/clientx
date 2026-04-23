@@ -13,6 +13,7 @@ import (
 	"github.com/arcgolabs/clientx"
 	clienthttp "github.com/arcgolabs/clientx/http"
 	"github.com/samber/lo"
+	"resty.dev/v3"
 )
 
 func TestExecuteWithNilRequest(t *testing.T) {
