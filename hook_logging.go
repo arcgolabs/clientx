@@ -3,7 +3,7 @@ package clientx
 import (
 	"log/slog"
 
-	"github.com/arcgolabs/collectionx"
+	collectionlist "github.com/arcgolabs/collectionx/list"
 )
 
 // LoggingHookOption configures NewLoggingHook behavior.
@@ -39,7 +39,7 @@ func (h *loggingHook) OnDial(event DialEvent) {
 	if h == nil || h.logger == nil {
 		return
 	}
-	attrs := collectionx.NewListWithCapacity[any](10,
+	attrs := collectionlist.NewListWithCapacity[any](10,
 		"protocol", event.Protocol,
 		"op", event.Op,
 		"network", event.Network,
@@ -60,7 +60,7 @@ func (h *loggingHook) OnIO(event IOEvent) {
 	if h == nil || h.logger == nil {
 		return
 	}
-	attrs := collectionx.NewListWithCapacity[any](10,
+	attrs := collectionlist.NewListWithCapacity[any](10,
 		"protocol", event.Protocol,
 		"op", event.Op,
 		"bytes", event.Bytes,

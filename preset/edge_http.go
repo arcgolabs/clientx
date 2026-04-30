@@ -6,7 +6,7 @@ import (
 
 	"github.com/arcgolabs/clientx"
 	clienthttp "github.com/arcgolabs/clientx/http"
-	"github.com/arcgolabs/collectionx"
+	collectionlist "github.com/arcgolabs/collectionx/list"
 	"github.com/samber/oops"
 )
 
@@ -131,7 +131,7 @@ func tuneEdgeHTTPConfig(cfg clienthttp.Config, preset edgeHTTPPreset) clienthttp
 }
 
 func buildEdgeHTTPOptions(preset edgeHTTPPreset) []clienthttp.Option {
-	clientOpts := collectionx.NewListWithCapacity[clienthttp.Option](2 + len(preset.options))
+	clientOpts := collectionlist.NewListWithCapacity[clienthttp.Option](2 + len(preset.options))
 	if preset.timeoutGuard > 0 {
 		clientOpts.Add(clienthttp.WithTimeoutGuard(preset.timeoutGuard))
 	}

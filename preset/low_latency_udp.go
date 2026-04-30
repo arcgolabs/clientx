@@ -5,7 +5,7 @@ import (
 
 	"github.com/arcgolabs/clientx"
 	clientudp "github.com/arcgolabs/clientx/udp"
-	"github.com/arcgolabs/collectionx"
+	collectionlist "github.com/arcgolabs/collectionx/list"
 	"github.com/samber/oops"
 )
 
@@ -113,7 +113,7 @@ func tuneLowLatencyUDPConfig(cfg clientudp.Config, preset lowLatencyUDPPreset) c
 }
 
 func buildLowLatencyUDPOptions(preset lowLatencyUDPPreset) []clientudp.Option {
-	clientOpts := collectionx.NewListWithCapacity[clientudp.Option](2 + len(preset.options))
+	clientOpts := collectionlist.NewListWithCapacity[clientudp.Option](2 + len(preset.options))
 	if preset.timeoutGuard > 0 {
 		clientOpts.Add(clientudp.WithTimeoutGuard(preset.timeoutGuard))
 	}

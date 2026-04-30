@@ -7,7 +7,7 @@ import (
 	"time"
 
 	"github.com/arcgolabs/clientx"
-	"github.com/arcgolabs/collectionx"
+	collectionmapping "github.com/arcgolabs/collectionx/mapping"
 	"github.com/samber/oops"
 )
 
@@ -15,7 +15,7 @@ import (
 type Config struct {
 	BaseURL   string
 	Timeout   time.Duration
-	Headers   collectionx.Map[string, string]
+	Headers   *collectionmapping.Map[string, string]
 	UserAgent string
 	Retry     clientx.RetryConfig
 	TLS       clientx.TLSConfig

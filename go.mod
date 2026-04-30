@@ -3,6 +3,10 @@ module github.com/arcgolabs/clientx
 go 1.26.2
 
 require (
+	github.com/arcgolabs/collectionx/list v0.6.0
+	github.com/arcgolabs/collectionx/mapping v0.6.0
+	github.com/arcgolabs/observabilityx v0.3.0
+	github.com/arcgolabs/pkg/option v0.0.3
 	github.com/samber/lo v1.53.0
 	github.com/samber/mo v1.16.0
 	github.com/samber/oops v1.21.0
@@ -10,6 +14,7 @@ require (
 )
 
 require (
+	github.com/arcgolabs/collectionx/internal v0.6.0 // indirect
 	github.com/cespare/xxhash/v2 v2.3.0 // indirect
 	github.com/oklog/ulid/v2 v2.1.1 // indirect
 	go.opentelemetry.io/otel v1.43.0 // indirect

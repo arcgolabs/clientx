@@ -4,7 +4,7 @@ import (
 	"errors"
 	"strings"
 
-	"github.com/arcgolabs/collectionx"
+	collectionlist "github.com/arcgolabs/collectionx/list"
 	"github.com/arcgolabs/collectionx/mapping"
 	"github.com/samber/lo"
 	"github.com/samber/mo"
@@ -31,7 +31,7 @@ type Registry struct {
 
 // NewRegistry creates a Registry populated with codecs.
 func NewRegistry(codecs ...Codec) *Registry {
-	r := &Registry{codecs: mapping.NewConcurrentMap[string, Codec]()}
+	r := &Registry{codecs: mapping.NewConcurrentMapWithCapacity[string, Codec](len(codecs))}
 	lo.ForEach(codecs, func(c Codec, _ int) {
 		mustRegisterCodec(r, c)
 	})
@@ -95,15 +95,11 @@ func (r *Registry) Must(name string) Codec {
 }
 
 // Names returns the registered codec names in sorted order.
-func (r *Registry) Names() collectionx.List[string] {
+func (r *Registry) Names() *collectionlist.List[string] {
 	if r == nil || r.codecs == nil {
-		return collectionx.NewList[string]()
+		return collectionlist.NewList[string]()
 	}
-	names := collectionx.NewListWithCapacity[string](r.codecs.Len())
-	r.codecs.Range(func(name string, _ Codec) bool {
-		names.Add(name)
-		return true
-	})
+	names := collectionlist.NewList(r.codecs.Keys()...)
 	return names.Sort(func(left, right string) int {
 		switch {
 		case left < right:
@@ -143,7 +139,7 @@ func Must(name string) Codec {
 }
 
 // Names returns the codec names from the default registry.
-func Names() collectionx.List[string] {
+func Names() *collectionlist.List[string] {
 	return defaultRegistry.Names()
 }
 

@@ -4,7 +4,7 @@ import (
 	"context"
 	"strings"
 
-	"github.com/arcgolabs/collectionx"
+	collectionlist "github.com/arcgolabs/collectionx/list"
 	"github.com/arcgolabs/observabilityx"
 	"github.com/samber/lo"
 )
@@ -62,7 +62,7 @@ type observabilityHook struct {
 }
 
 func (h *observabilityHook) OnDial(event DialEvent) {
-	attrs := collectionx.NewListWithCapacity[observabilityx.Attribute](6,
+	attrs := collectionlist.NewListWithCapacity[observabilityx.Attribute](6,
 		observabilityx.String("protocol", string(event.Protocol)),
 		observabilityx.String("op", event.Op),
 		observabilityx.String("network", event.Network),
@@ -81,7 +81,7 @@ func (h *observabilityHook) OnDial(event DialEvent) {
 }
 
 func (h *observabilityHook) OnIO(event IOEvent) {
-	attrs := collectionx.NewListWithCapacity[observabilityx.Attribute](6,
+	attrs := collectionlist.NewListWithCapacity[observabilityx.Attribute](6,
 		observabilityx.String("protocol", string(event.Protocol)),
 		observabilityx.String("op", event.Op),
 		observabilityx.String("result", resultOf(event.Err)),

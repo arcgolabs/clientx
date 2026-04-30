@@ -5,7 +5,7 @@ import (
 
 	"github.com/arcgolabs/clientx"
 	clienttcp "github.com/arcgolabs/clientx/tcp"
-	"github.com/arcgolabs/collectionx"
+	collectionlist "github.com/arcgolabs/collectionx/list"
 	"github.com/samber/oops"
 )
 
@@ -149,7 +149,7 @@ func tuneInternalRPCConfig(cfg clienttcp.Config, preset internalRPCPreset) clien
 }
 
 func buildInternalRPCOptions(preset internalRPCPreset) []clienttcp.Option {
-	clientOpts := collectionx.NewListWithCapacity[clienttcp.Option](3 + len(preset.options))
+	clientOpts := collectionlist.NewListWithCapacity[clienttcp.Option](3 + len(preset.options))
 	if preset.timeoutGuard > 0 {
 		clientOpts.Add(clienttcp.WithTimeoutGuard(preset.timeoutGuard))
 	}
