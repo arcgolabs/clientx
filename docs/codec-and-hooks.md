@@ -117,8 +117,11 @@ func main() {
 	defer func() { _ = cc.Close() }()
 
 	_ = cc.WriteValue(map[string]string{"message": "ping"})
-	var out map[string]string
-	_ = cc.ReadValue(&out)
+	out, err := cc.ReadValue[map[string]string]()
+	if err != nil {
+		log.Fatal(err)
+	}
+	log.Printf("response: %v", out)
 }
 ```
 
@@ -151,10 +154,15 @@ func main() {
 	defer func() { _ = uc.Close() }()
 
 	_ = uc.WriteValue(map[string]string{"message": "ping"})
-	var out map[string]string
-	_ = uc.ReadValue(&out)
+	out, err := uc.ReadValue[map[string]string]()
+	if err != nil {
+		log.Fatal(err)
+	}
+	log.Printf("response: %v", out)
 }
 ```
+
+`ReadValue` and `ReadValueFrom` are Go 1.27 generic methods on the concrete codec connection types. Migrate from `conn.ReadValue(&value)` to `value, err := conn.ReadValue[ValueType]()`; for packet reads, use `value, addr, err := conn.ReadValueFrom[ValueType]()`.
 
 ## 5) Hooks (dial / IO lifecycle)
 

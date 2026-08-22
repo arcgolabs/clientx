@@ -2,6 +2,8 @@
 
 `clientx` is a protocol-oriented client package set for common network protocols.
 
+Requires Go 1.27 or later. Codec connections use Go 1.27 generic methods for typed reads.
+
 - First-wave protocols: `http`, `tcp`, `udp`
 - Shared primitives: `RetryConfig`, `TLSConfig`, typed errors (`*clientx.Error`), and optional **hooks** for dial / I/O lifecycle
 - Constructors return interfaces (`http.Client`, `tcp.Client`, `udp.Client`) so implementations stay replaceable

@@ -82,20 +82,21 @@ func (c *CodecConn) WriteValue(v any) error {
 	return nil
 }
 
-// ReadValue reads one UDP payload and decodes it into v.
-func (c *CodecConn) ReadValue(v any) error {
+// ReadValue reads one UDP payload and decodes it as T.
+func (c *CodecConn) ReadValue[T any]() (T, error) {
+	var value T
 	if c == nil {
-		return oops.In("clientx/udp").
+		return value, oops.In("clientx/udp").
 			With("op", "decode", "protocol", clientx.ProtocolUDP).
 			New("codec conn is nil")
 	}
 	if c.conn == nil {
-		return oops.In("clientx/udp").
+		return value, oops.In("clientx/udp").
 			With("op", "decode", "addr", c.addr, "protocol", clientx.ProtocolUDP, "stage", "validate_conn").
 			New("conn is nil")
 	}
 	if c.codec == nil {
-		return oops.In("clientx/udp").
+		return value, oops.In("clientx/udp").
 			With("op", "decode", "addr", c.addr, "protocol", clientx.ProtocolUDP, "stage", "validate_codec").
 			New("codec is nil")
 	}
@@ -103,16 +104,16 @@ func (c *CodecConn) ReadValue(v any) error {
 	buf := make([]byte, maxUDPPacketSize)
 	n, err := c.conn.Read(buf)
 	if err != nil {
-		return oops.In("clientx/udp").
+		return value, oops.In("clientx/udp").
 			With("op", "read", "addr", c.addr, "protocol", clientx.ProtocolUDP).
 			Wrapf(wrapClientError("read", c.addr, err), "read udp payload")
 	}
-	if err := c.codec.Unmarshal(buf[:n], v); err != nil {
-		return oops.In("clientx/udp").
-			With("op", "decode", "addr", c.addr, "protocol", clientx.ProtocolUDP, "stage", "unmarshal", "target_type", fmt.Sprintf("%T", v), "payload_size", n).
+	if err := c.codec.Unmarshal(buf[:n], &value); err != nil {
+		return value, oops.In("clientx/udp").
+			With("op", "decode", "addr", c.addr, "protocol", clientx.ProtocolUDP, "stage", "unmarshal", "target_type", fmt.Sprintf("%T", &value), "payload_size", n).
 			Wrapf(wrapCodecError("decode", c.addr, err), "decode udp value")
 	}
-	return nil
+	return value, nil
 }
 
 // CodecPacketConn wraps a packet listener with codec helpers.
@@ -155,20 +156,21 @@ func (c *CodecPacketConn) Close() error {
 	return nil
 }
 
-// ReadValueFrom reads one packet and decodes it into v.
-func (c *CodecPacketConn) ReadValueFrom(v any) (net.Addr, error) {
+// ReadValueFrom reads one packet and decodes it as T.
+func (c *CodecPacketConn) ReadValueFrom[T any]() (T, net.Addr, error) {
+	var value T
 	if c == nil {
-		return nil, oops.In("clientx/udp").
+		return value, nil, oops.In("clientx/udp").
 			With("op", "decode", "protocol", clientx.ProtocolUDP).
 			New("packet codec conn is nil")
 	}
 	if c.conn == nil {
-		return nil, oops.In("clientx/udp").
+		return value, nil, oops.In("clientx/udp").
 			With("op", "decode", "addr", c.addr, "protocol", clientx.ProtocolUDP, "stage", "validate_conn").
 			New("packet conn is nil")
 	}
 	if c.codec == nil {
-		return nil, oops.In("clientx/udp").
+		return value, nil, oops.In("clientx/udp").
 			With("op", "decode", "addr", c.addr, "protocol", clientx.ProtocolUDP, "stage", "validate_codec").
 			New("codec is nil")
 	}
@@ -176,16 +178,16 @@ func (c *CodecPacketConn) ReadValueFrom(v any) (net.Addr, error) {
 	buf := make([]byte, maxUDPPacketSize)
 	n, addr, err := c.conn.ReadFrom(buf)
 	if err != nil {
-		return nil, oops.In("clientx/udp").
+		return value, nil, oops.In("clientx/udp").
 			With("op", "read_from", "addr", c.addr, "protocol", clientx.ProtocolUDP).
 			Wrapf(wrapClientError("read_from", c.addr, err), "read udp packet")
 	}
-	if err := c.codec.Unmarshal(buf[:n], v); err != nil {
-		return nil, oops.In("clientx/udp").
-			With("op", "decode", "addr", c.addr, "protocol", clientx.ProtocolUDP, "stage", "unmarshal", "target_type", fmt.Sprintf("%T", v), "payload_size", n).
+	if err := c.codec.Unmarshal(buf[:n], &value); err != nil {
+		return value, nil, oops.In("clientx/udp").
+			With("op", "decode", "addr", c.addr, "protocol", clientx.ProtocolUDP, "stage", "unmarshal", "target_type", fmt.Sprintf("%T", &value), "payload_size", n).
 			Wrapf(wrapCodecError("decode", c.addr, err), "decode udp packet")
 	}
-	return addr, nil
+	return value, addr, nil
 }
 
 // WriteValueTo encodes v and writes it to addr.

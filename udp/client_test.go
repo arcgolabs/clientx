@@ -133,8 +133,7 @@ func TestDialCodecRoundTrip(t *testing.T) {
 
 	serverErr := make(chan error, 1)
 	go func() {
-		var req payload
-		addr, readErr := server.ReadValueFrom(&req)
+		req, addr, readErr := server.ReadValueFrom[payload]()
 		if readErr != nil {
 			serverErr <- readErr
 			return
@@ -163,8 +162,8 @@ func TestDialCodecRoundTrip(t *testing.T) {
 		t.Fatalf("write value failed: %v", err)
 	}
 
-	var resp payload
-	if err := codecConn.ReadValue(&resp); err != nil {
+	resp, err := codecConn.ReadValue[payload]()
+	if err != nil {
 		t.Fatalf("read value failed: %v", err)
 	}
 	if resp.Message != "ack:ping" {

@@ -88,39 +88,40 @@ func (c *CodecConn) WriteValue(v any) error {
 	return nil
 }
 
-// ReadValue reads one framed payload and decodes it into v.
-func (c *CodecConn) ReadValue(v any) error {
+// ReadValue reads one framed payload and decodes it as T.
+func (c *CodecConn) ReadValue[T any]() (T, error) {
+	var value T
 	if c == nil {
-		return oops.In("clientx/tcp").
+		return value, oops.In("clientx/tcp").
 			With("op", "decode", "protocol", clientx.ProtocolTCP).
 			New("codec conn is nil")
 	}
 	if c.conn == nil {
-		return oops.In("clientx/tcp").
+		return value, oops.In("clientx/tcp").
 			With("op", "decode", "addr", c.addr, "protocol", clientx.ProtocolTCP, "stage", "validate_conn").
 			New("conn is nil")
 	}
 	if c.codec == nil {
-		return oops.In("clientx/tcp").
+		return value, oops.In("clientx/tcp").
 			With("op", "decode", "addr", c.addr, "protocol", clientx.ProtocolTCP, "stage", "validate_codec").
 			New("codec is nil")
 	}
 	if c.framer == nil {
-		return oops.In("clientx/tcp").
+		return value, oops.In("clientx/tcp").
 			With("op", "decode", "addr", c.addr, "protocol", clientx.ProtocolTCP, "stage", "validate_framer").
 			New("framer is nil")
 	}
 
 	frame, err := c.framer.ReadFrame(c.conn)
 	if err != nil {
-		return oops.In("clientx/tcp").
+		return value, oops.In("clientx/tcp").
 			With("op", "read_frame", "addr", c.addr, "protocol", clientx.ProtocolTCP).
 			Wrapf(wrapClientError("read_frame", c.addr, err), "read tcp frame")
 	}
-	if err := c.codec.Unmarshal(frame, v); err != nil {
-		return oops.In("clientx/tcp").
-			With("op", "decode", "addr", c.addr, "protocol", clientx.ProtocolTCP, "stage", "unmarshal", "target_type", fmt.Sprintf("%T", v), "payload_size", len(frame)).
+	if err := c.codec.Unmarshal(frame, &value); err != nil {
+		return value, oops.In("clientx/tcp").
+			With("op", "decode", "addr", c.addr, "protocol", clientx.ProtocolTCP, "stage", "unmarshal", "target_type", fmt.Sprintf("%T", &value), "payload_size", len(frame)).
 			Wrapf(wrapCodecError("decode", c.addr, err), "decode tcp value")
 	}
-	return nil
+	return value, nil
 }

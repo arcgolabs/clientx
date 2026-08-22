@@ -135,8 +135,8 @@ func TestDialCodecRoundTrip(t *testing.T) {
 		t.Fatalf("client write value failed: %v", err)
 	}
 
-	var resp payload
-	if err := cc.ReadValue(&resp); err != nil {
+	resp, err := cc.ReadValue[payload]()
+	if err != nil {
 		t.Fatalf("client read value failed: %v", err)
 	}
 	if resp.Message != "ack:ping" {
@@ -279,8 +279,7 @@ func serveCodecRoundTrip(listener net.Listener, serverErr chan<- error) {
 	}()
 
 	codecConn := clienttcp.NewCodecConn(conn, clientcodec.JSON, clientcodec.NewLengthPrefixed(1024), listener.Addr().String())
-	var req payload
-	readErr := codecConn.ReadValue(&req)
+	req, readErr := codecConn.ReadValue[payload]()
 	if readErr != nil {
 		serverErr <- readErr
 		return
